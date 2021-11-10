@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/activity_main.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/fragment_home.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/fragment_new_b_p_t_p_publishing.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/fragment_new_collection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/layout/new_collection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyLibrary/app/src/main/res/menu/list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Works/MyLibrary/app/src/main/res/drawable/rounded_top_left_right.xml" value="0.3828125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Works/MyLibrary/app/src/main/res/layout/activity_main.xml" value="0.3818350324374421" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Works/MyLibrary/app/src/main/res/menu/list.xml" value="0.20520833333333333" />
@@ -10,7 +18,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
