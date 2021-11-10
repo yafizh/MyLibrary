@@ -3,7 +3,6 @@ package com.bptp.mylibrary
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bptp.mylibrary.databinding.ActivityMainBinding
-import androidx.viewpager2.widget.ViewPager2
 import com.bptp.mylibrary.ui.category.CategoryFragment
 
 class MainActivity : AppCompatActivity() {
