@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        android:title="Beranda"
+        android:title="Home"
         android:checked="true"
-        android:iconTint="@color/orange_600"/>
+        android:color="@color/green_600"/>
 
     <item
         android:id="@+id/news"
         android:icon="@drawable/ic_new"
         android:title="Terbaru"
-        android:iconTint="@color/orange_600"/>
+        android:color="@color/green_600"/>
 
     <item
         android:id="@+id/category"
         android:icon="@drawable/ic_category"
         android:title="Kategori"
-        android:iconTint="@color/orange_600"/>
+        android:color="@color/green_600"/>
 </menu>

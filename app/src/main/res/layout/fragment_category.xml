@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/green_600"
-    tools:context=".ui.category.CategoryFragment">
+    tools:context=".ui.category.CategoriesFragment">
 
     <LinearLayout
         android:id="@+id/ll_header"
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_library"
             app:mt_hint="Custom hint"
             app:mt_maxSuggestionsCount="10"
-            app:mt_placeholder="Pencarian"
+            app:mt_placeholder="Nama buku, pengarang"
             app:mt_speechMode="true" />
 
         <com.google.android.material.tabs.TabLayout
