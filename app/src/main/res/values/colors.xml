@@ -22,4 +22,6 @@
     <color name="orange_400">#d6a23c</color>
     <color name="orange_600">#cd8a25</color>
     <color name="orange_800">#c06f1b</color>
+
+    <color name="gray_shimmer">#D7D8DA</color>
 </resources>

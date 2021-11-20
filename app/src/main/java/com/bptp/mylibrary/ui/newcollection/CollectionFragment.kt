@@ -1,17 +1,15 @@
-package com.bptp.mylibrary.ui.new_collection
+package com.bptp.mylibrary.ui.newcollection
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bptp.mylibrary.databinding.FragmentNewBPTPPublishingBinding
 import com.bptp.mylibrary.ui.data.source.BooksData
 import com.bptp.mylibrary.ui.utils.adapter.CardViewAdapter
 import com.bptp.mylibrary.ui.detail.DetailActivity
-import com.bptp.mylibrary.ui.data.model.Hero
 
 class CollectionFragment : Fragment() {
     private lateinit var binding: FragmentNewBPTPPublishingBinding
@@ -27,11 +25,11 @@ class CollectionFragment : Fragment() {
     private fun showData() {
         binding.rvHero.layoutManager = LinearLayoutManager(context)
         adapter = CardViewAdapter({ item, position ->
-            DetailActivity.startActivity(context, item)
+//            DetailActivity.startActivity(context, item)
         })
         binding.rvHero.adapter = adapter
 
-        adapter.setItems(BooksData.listData)
+//        adapter.setItems(BooksData.listData)
 //        adapter.setOnItemClickCallback(object : CardViewAdapter.OnItemClickCallback {
 //            override fun onItemClicked(data: Hero) {
 //                Toast.makeText(context, "MASUKKKK", Toast.LENGTH_SHORT).show()

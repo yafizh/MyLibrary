@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.bptp.mylibrary.databinding.ActivityMainBinding
 import com.bptp.mylibrary.ui.category.CategoriesFragment
 import com.bptp.mylibrary.ui.home.HomeFragment
-import com.bptp.mylibrary.ui.new_collection.NewCollectionFragment
+import com.bptp.mylibrary.ui.newcollection.NewCollectionFragment
 import com.bptp.mylibrary.ui.utils.adapter.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {

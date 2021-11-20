@@ -58,16 +58,16 @@ class CategoriesFragment : Fragment(), MaterialSearchBar.OnSearchActionListener 
     }
 
     override fun onSearchConfirmed(text: CharSequence?) {
-        (viewPagerAdapter.getCurrentFragment(binding.vpTask.currentItem) as GeneralFragment).
-        adapter.setItems(BooksData.listData.filter {
-            it.bookName.uppercase().contains(text.toString().uppercase())
-            ||
-            it.bookAuthor.uppercase().contains(text.toString().uppercase())
-            &&
-            it.bookCategory.uppercase().contains(viewPagerAdapter.getPageTitle(binding.vpTask.currentItem).uppercase())
-        })
-        val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
+//        (viewPagerAdapter.getCurrentFragment(binding.vpTask.currentItem) as GeneralFragment).
+//        adapter.setItems(BooksData.listData.filter {
+//            it.bookName.uppercase().contains(text.toString().uppercase())
+//            ||
+//            it.bookAuthor.uppercase().contains(text.toString().uppercase())
+//            &&
+//            it.bookCategory.uppercase().contains(viewPagerAdapter.getPageTitle(binding.vpTask.currentItem).uppercase())
+//        })
+//        val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//        inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
     }
 
     override fun onButtonClicked(buttonCode: Int) {

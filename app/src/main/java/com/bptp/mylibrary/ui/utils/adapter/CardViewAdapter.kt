@@ -1,25 +1,25 @@
 package com.bptp.mylibrary.ui.utils.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.bptp.mylibrary.data.network.model.response.Book
 import com.bptp.mylibrary.databinding.ItemCardviewHeroBinding
-import com.bptp.mylibrary.ui.data.model.Hero
 
 class CardViewAdapter(
-    private val itemClick: (Hero, Int) -> Unit
+    private val itemClick: (Book, Int) -> Unit
 ) : RecyclerView.Adapter<CardViewAdapter.CardViewViewHolder>() {
-    private var items: MutableList<Hero> = mutableListOf()
+    private var items: MutableList<Book> = mutableListOf()
 
 
-    fun setItems(items: List<Hero>) {
+    fun setItems(items: List<Book>) {
         clearItems()
         addItems(items)
         notifyDataSetChanged()
     }
 
-    fun addItems(items: List<Hero>) {
+    fun addItems(items: List<Book>) {
         this.items.addAll(items)
         notifyDataSetChanged()
     }
@@ -31,14 +31,14 @@ class CardViewAdapter(
 
     class CardViewViewHolder(
         private val binding: ItemCardviewHeroBinding,
-        private val itemClick: (item: Hero, position: Int) -> Unit
+        private val itemClick: (item: Book, position: Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bindView(item: Hero, position: Int) {
+        fun bindView(item: Book, position: Int) {
             with(item) {
                 binding.tvAuthor.text = bookAuthor
                 binding.tvDescription.text = bookDescription
-                binding.tvTitle.text = bookName
-                binding.ivBook.setImageResource(bookImage)
+                binding.tvTitle.text = bookTitle
+                binding.ivBook.load("https://magangbptp.000webhostapp.com/uploads/cover/"+bookCoverUri)
                 binding.flWrapper.setOnClickListener {
                     itemClick(item, position)
                 }

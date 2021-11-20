@@ -18,19 +18,11 @@ class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
         fragmentTitleList.add(title)
     }
 
-    override fun getItemCount(): Int {
-        return fragmentList.size
-    }
+    override fun getItemCount(): Int = fragmentList.size
 
-    override fun createFragment(position: Int): Fragment {
-        return fragmentList[position]
-    }
+    override fun createFragment(position: Int): Fragment = fragmentList[position]
 
-    fun getPageTitle(position : Int) : String {
-        return fragmentTitleList[position]
-    }
+    fun getPageTitle(position : Int) : String = fragmentTitleList[position]
 
-    fun getCurrentFragment(position: Int): Fragment {
-        return fragmentList[position]
-    }
+    fun getCurrentFragment(position: Int): Fragment = fragmentList[position]
 }

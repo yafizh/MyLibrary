@@ -22,13 +22,12 @@
             android:text="Beranda"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <com.mancj.materialsearchbar.MaterialSearchBar
             android:id="@+id/searchBar"
             style="@style/MaterialSearchBarLight"
             android:layout_width="match_parent"
-            app:mt_maxSuggestionsCount="0"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -36,18 +35,50 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintTop_toBottomOf="@id/tv_library"
             app:mt_hint="Custom hint"
-            app:mt_placeholder="Nama buku, pengarang"
-            app:mt_speechMode="true" />
+            app:mt_maxSuggestionsCount="0"
+            app:mt_placeholder="Nama buku, pengarang"/>
     </LinearLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_hero"
-        tools:listitem="@layout/item_cardview_hero"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_notes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/rounded_top_left_right"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_header" />
+        app:layout_constraintTop_toBottomOf="@id/ll_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/shimmer_placeholder_layout" />
+                    <include layout="@layout/shimmer_placeholder_layout" />
+                    <include layout="@layout/shimmer_placeholder_layout" />
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_hero"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_top_left_right"
+                tools:listitem="@layout/item_cardview_hero" />
+        </LinearLayout>
+
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

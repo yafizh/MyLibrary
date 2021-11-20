@@ -1,4 +1,4 @@
-package com.bptp.mylibrary.ui.new_collection
+package com.bptp.mylibrary.ui.newcollection
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.bptp.mylibrary.ui.utils.adapter.ViewPagerAdapter
 import com.bptp.mylibrary.databinding.FragmentNewCollectionBinding
-import com.bptp.mylibrary.ui.utils.adapter.CardViewAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class NewCollectionFragment : Fragment() {

@@ -41,12 +41,12 @@ class GeneralFragment : Fragment() {
     private fun showData() {
         binding.rvHero.layoutManager = LinearLayoutManager(context)
         adapter = CardViewAdapter { item, _ ->
-            DetailActivity.startActivity(context, item)
+//            DetailActivity.startActivity(context, item)
         }
         binding.rvHero.adapter = adapter
-        adapter.setItems(BooksData.listData.filter {
-            it.bookCategory.uppercase().contains(category.toString().uppercase())
-        })
+//        adapter.setItems(BooksData.listData.filter {
+//            it.bookCategory.uppercase().contains(category.toString().uppercase())
+//        })
     }
 
     companion object {
