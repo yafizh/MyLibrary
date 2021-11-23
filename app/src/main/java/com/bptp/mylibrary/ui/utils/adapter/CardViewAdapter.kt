@@ -8,7 +8,7 @@ import com.bptp.mylibrary.data.network.model.response.Book
 import com.bptp.mylibrary.databinding.ItemCardviewHeroBinding
 
 class CardViewAdapter(
-    private val itemClick: (Book, Int) -> Unit
+    private val itemClick: (Book) -> Unit
 ) : RecyclerView.Adapter<CardViewAdapter.CardViewViewHolder>() {
     private var items: MutableList<Book> = mutableListOf()
 
@@ -31,16 +31,16 @@ class CardViewAdapter(
 
     class CardViewViewHolder(
         private val binding: ItemCardviewHeroBinding,
-        private val itemClick: (item: Book, position: Int) -> Unit
+        private val itemClick: (item: Book) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bindView(item: Book, position: Int) {
-            with(item) {
+        fun bindView(book: Book) {
+            with(book) {
                 binding.tvAuthor.text = bookAuthor
                 binding.tvDescription.text = bookDescription
                 binding.tvTitle.text = bookTitle
                 binding.ivBook.load("https://magangbptp.000webhostapp.com/uploads/cover/"+bookCoverUri)
                 binding.flWrapper.setOnClickListener {
-                    itemClick(item, position)
+                    itemClick(book)
                 }
             }
         }
@@ -53,7 +53,7 @@ class CardViewAdapter(
     }
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
-        holder.bindView(items[position], position)
+        holder.bindView(items[position])
     }
 
     override fun getItemCount(): Int = items.size

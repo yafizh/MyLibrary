@@ -1,8 +1,11 @@
 package com.bptp.mylibrary.data.network.model.response
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Book(
     @SerializedName("book_author")
     var bookAuthor: String,
@@ -15,7 +18,7 @@ data class Book(
     @SerializedName("book_description")
     var bookDescription: String,
     @SerializedName("book_file_uri")
-    var bookFileUri: Any,
+    var bookFileUri: String,
     @SerializedName("book_height")
     var bookHeight: String,
     @SerializedName("book_id")
@@ -42,4 +45,4 @@ data class Book(
     var bookTitle: String,
     @SerializedName("book_width")
     var bookWidth: String
-)
+): Parcelable

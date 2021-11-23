@@ -4,10 +4,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import coil.load
+import com.bptp.mylibrary.data.network.model.response.Book
 import com.bptp.mylibrary.databinding.ActivityDetailBinding
 import com.bptp.mylibrary.ui.utils.pdfviewer.FDPViewerActivity
-import com.bptp.mylibrary.ui.data.model.Hero
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -21,20 +22,17 @@ class DetailActivity : AppCompatActivity() {
         binding.btnReadNow.setOnClickListener {
             startActivity(Intent(this, FDPViewerActivity::class.java))
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
         getIntentData()
     }
 
-    private fun bindData(data: Hero?){
-        data?.let {
+    private fun bindData(book: Book?){
+        Log.d("HABIS", "bindData: ${book}")
+        book?.let {
             with(it) {
-                binding.ivBookImg.load("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTYY7n0e-GylssxKw9s-5EYUo65I3liFsIGEVo5ynV3PZngtaCV")
+                binding.ivBookImg.load("https://magangbptp.000webhostapp.com/uploads/cover/"+bookCoverUri)
                 binding.tvBookAuthor.text = bookAuthor
                 binding.tvBookDescription.text = bookDescription
-                binding.tvBookTitle.text = bookName
+                binding.tvBookTitle.text = bookTitle
                 binding.tvBookLanguage.text = "INGGRIS"
                 binding.tvBookPage.text = "100"
                 binding.tvBookPublishYear.text = "2020"
@@ -43,16 +41,16 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun getIntentData() {
-        bindData(intent.extras?.getParcelable(EXTRAS_TASK_DATA))
+        val x = intent.extras?.getParcelable(EXTRAS_BOOK)
     }
 
     companion object {
-        const val EXTRAS_TASK_DATA = "EXTRAS_TASK_DATA"
+        const val EXTRAS_BOOK = "EXTRAS_BOOK"
 
         @JvmStatic
-        fun startActivity(context: Context?, task: Hero) {
+        fun startActivity(context: Context?, book: Book) {
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(EXTRAS_TASK_DATA, task)
+            intent.putExtra(EXTRAS_BOOK, book)
             context?.startActivity(intent)
         }
     }

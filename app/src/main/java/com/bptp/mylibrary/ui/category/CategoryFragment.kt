@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bptp.mylibrary.databinding.FragmentGeneralBinding
-import com.bptp.mylibrary.ui.data.source.BooksData
 import com.bptp.mylibrary.ui.utils.adapter.CardViewAdapter
 import com.bptp.mylibrary.ui.detail.DetailActivity
 
@@ -40,8 +39,8 @@ class GeneralFragment : Fragment() {
 
     private fun showData() {
         binding.rvHero.layoutManager = LinearLayoutManager(context)
-        adapter = CardViewAdapter { item, _ ->
-//            DetailActivity.startActivity(context, item)
+        adapter = CardViewAdapter { item ->
+            DetailActivity.startActivity(context, item)
         }
         binding.rvHero.adapter = adapter
 //        adapter.setItems(BooksData.listData.filter {

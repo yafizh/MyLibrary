@@ -11,7 +11,6 @@ import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bptp.mylibrary.data.network.service.ApiService
 import com.bptp.mylibrary.databinding.FragmentHomeBinding
-import com.bptp.mylibrary.ui.data.source.BooksData
 import com.bptp.mylibrary.ui.utils.adapter.CardViewAdapter
 import com.bptp.mylibrary.ui.detail.DetailActivity
 import com.mancj.materialsearchbar.MaterialSearchBar
@@ -46,8 +45,8 @@ class HomeFragment : Fragment(), MaterialSearchBar.OnSearchActionListener {
 
     private fun showData() {
         binding.rvHero.layoutManager = LinearLayoutManager(context)
-        adapter = CardViewAdapter { item, position ->
-//            DetailActivity.startActivity(context, item)
+        adapter = CardViewAdapter { book ->
+            DetailActivity.startActivity(context, book)
         }
         binding.rvHero.adapter = adapter
     }
